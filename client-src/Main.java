@@ -8,7 +8,7 @@ public class Main extends JFrame {
 
     static {
         try {
-            socket = new Sender("localhost", 5555);
+            socket = new Sender("localhost", 1111);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
