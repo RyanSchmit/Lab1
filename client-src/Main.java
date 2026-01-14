@@ -5,6 +5,13 @@ import java.net.Socket;
 
 public class Main extends JFrame {
 	public static Sender socket;
+	/*
+	 * Names: Jonathan Martin, Ronan Biggs, Ryan Schmitt, Bernardo Lopez
+	 *
+	 * Note: to run, run Server.java in its own package for its main method
+	 *       and all other classes in another package to run the Main.java
+	 *       main method
+	 */
 
     static {
         try {

@@ -5,6 +5,7 @@ import java.net.Socket;
 import java.net.ServerSocket;
 
 public class Server {
+
     public static void main (String[] args){
         while(true) {
             try {
