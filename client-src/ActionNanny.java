@@ -1,17 +1,26 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 public class ActionNanny implements ActionListener {
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		System.out.println("ActionNanny: " + e.getActionCommand());
+        try {
+            Main.socket.send(e.getActionCommand());
+        } catch (IOException ex) {
+            throw new RuntimeException(ex);
+        }
 
-		if (e.getSource() instanceof JComboBox) {
+        if (e.getSource() instanceof JComboBox) {
 			JComboBox comboBox = (JComboBox) e.getSource();
-			System.out.println("Selected: " + comboBox.getSelectedItem());
-		}
+            try {
+                Main.socket.send((String) comboBox.getSelectedItem());
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+        }
 	}
 	
 }
